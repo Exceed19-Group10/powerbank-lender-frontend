@@ -1,2 +1,3 @@
-# smart-library-frontend
-Frontend React app for smart library
+npm install
+json-server db.json
+npm run dev
