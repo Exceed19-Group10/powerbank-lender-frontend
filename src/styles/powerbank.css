@@ -1,27 +1,31 @@
+*{
+  font-family: Maven Pro;
+}
+
 .powerbank-info-container {
     max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
-    padding-top: 4rem;
+    padding-top: 2rem;
     height: 100vh;
-  }
+}
 
 .user-login {
     width: 70%;
     height: 30%;
 }
 
-  input {
+input {
     border: 1px solid ;
     border-radius: 0.5pc;
-    padding: 0.5rem;
+    padding: 0.7rem;
     width: 100%;
   }
 
 .inputbar {
-    margin-bottom:2%;
+    margin-bottom:20px;
 }
 
   form {
@@ -32,10 +36,10 @@
   }
 
 
-  #borrow-button {
+#borrow-button {
     position: absolute;
     bottom: 0%;
-    font-size: 100%;
+    font-size: 25px;
     color: rgb(255, 255, 255);
     background-color: #338069;
     padding-top: 1rem;
@@ -43,4 +47,5 @@
     border: 0px;
     width: 100%;
     height: 100px;
+    font-family: Marcellus SC;
   }
