@@ -8,7 +8,6 @@
     flex-direction: column;
     align-items: center;
     margin: auto;
-    padding-top: 2rem;
     height: 100vh;
 }
 
@@ -49,3 +48,14 @@ input {
     height: 100px;
     font-family: Marcellus SC;
   }
+
+.warning-text {
+    color: #B81717;
+    font-size: large;
+    
+}
+
+.back-button {
+    align-self:flex-start;
+}
+
