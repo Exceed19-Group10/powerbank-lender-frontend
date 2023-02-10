@@ -17,12 +17,28 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      all_powerbank_status().then(data => setPowerbanks(data))
+      all_powerbank_status().then(data => setPowerbanks(data.all_powerbank))
     };
 
     const intervalId = setInterval(fetchData, 1000);
     return () => clearInterval(intervalId);
   }, [])
+
+  const linkSelector = (yu_mai, borrow_mai, powerbank_ID) => {
+    if (yu_mai) {
+      if (borrow_mai) {
+        return `/inuse/${powerbank_ID}`
+      } else {
+        return `/powerbank/${powerbank_ID}`
+      }
+    } else {
+      if (borrow_mai) {
+        return `/inuse/${powerbank_ID}`
+      } else {
+        return "/"
+      }
+    }
+  }
   
 
   return (
@@ -39,7 +55,7 @@ function Home() {
         {powerbanks.map((data) => {
           // console.log(data)
           return (
-            <Link to={`/powerbank/${parseInt(data.id)}`}>
+            <Link to={linkSelector(data.yu_mai, data.borrow_mai, data.powerbank_ID)}>
               <BatteryItem {...data}/>
             </Link>
           )
