@@ -1,32 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import BatteryItem from './components/Battery'
+import logo from './assets/logo.png'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="banner-container">
+        <img src={logo} alt="banner-logo" />
+        <div className="logo-text">
+          <h2 className='first-line-banner-text'>Power Bank</h2>
+          <h2 className='second-line-banner-text'>Lender</h2>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="card-container">
+        <BatteryItem id="001" cap="3000" battery="80" borrow_mai="0" yu_mai="0"/>
+        <BatteryItem id="002" cap="3000" battery="80" borrow_mai="0" yu_mai="1"/>
+        <BatteryItem id="003" cap="3000" battery="80" borrow_mai="1" yu_mai="0"/>
+        <BatteryItem id="004" cap="3000" battery="80" borrow_mai="1" yu_mai="1"/>
+        <BatteryItem id="001" cap="3000" battery="80" borrow_mai="0" yu_mai="0"/>
+        <BatteryItem id="002" cap="3000" battery="80" borrow_mai="0" yu_mai="1"/>
+        <BatteryItem id="003" cap="3000" battery="80" borrow_mai="1" yu_mai="0"/>
+        <BatteryItem id="004" cap="3000" battery="80" borrow_mai="1" yu_mai="1"/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }

@@ -1,42 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Maven Pro', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html {
+  background: linear-gradient(11.07deg, #C5C5EC 4.46%, #CFDAF3 31.55%, #D2E1F5 59.54%, #D8F0FA 76.7%, #EAF6FB 91.15%);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding-top: 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+.banner-container img {
+  width: 25%
 }
 
-.read-the-docs {
-  color: #888;
+.card-container {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.logo-text h2{
+  font-family: 'Londrina Solid';
+  font-weight: 400;
+  color: #3F4651;
+}
+
+.logo-text {
+  margin-left: 1.5rem;
+}
+
+.first-line-banner-text {
+  font-size: 3rem;
+  line-height: 2.5rem;
+}
+
+
+.second-line-banner-text {
+  font-size: 6rem;
+  line-height: 4.5rem;
 }
