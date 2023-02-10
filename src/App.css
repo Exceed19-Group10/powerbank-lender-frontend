@@ -7,15 +7,17 @@
 
 html {
   background: linear-gradient(11.07deg, #C5C5EC 4.46%, #CFDAF3 31.55%, #D2E1F5 59.54%, #D8F0FA 76.7%, #EAF6FB 91.15%);
+  min-width: 400px;
 }
 
 .App {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   margin: auto;
   padding-top: 4rem;
+  min-height: 100vh;
 }
 
 .banner-container {
@@ -46,12 +48,12 @@ html {
 }
 
 .first-line-banner-text {
-  font-size: 3rem;
-  line-height: 2.5rem;
+  font-size: 3.5rem;
+  line-height: 2.7rem;
 }
 
 
 .second-line-banner-text {
   font-size: 6rem;
-  line-height: 4.5rem;
+  line-height: 5rem;
 }

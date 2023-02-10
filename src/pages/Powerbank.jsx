@@ -3,8 +3,10 @@ import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import BatteryItem from '../components/BatteryItem'
 import '../styles/powerbank.css'
+import { get_powerbank_status } from '../services/pw_data'
 
 function Powerbank() {
+
   const [powerbankInfo, setPowerbankInfo] = useState({})
   const {id} = useParams()
   const [uid, setUid] = useState("");
@@ -13,12 +15,10 @@ function Powerbank() {
 
   useEffect(() => {
     // getPlace(id).then(place => setCafe(place))
-    const testData = [{id:"001", cap:"3000", battery:"80", borrow_mai:"0", yu_mai:"0"},
-      {id:"002", cap:"3000", battery:"80", borrow_mai:"0", yu_mai:"1"},
-      {id:"003", cap:"3000", battery:"80", borrow_mai:"1", yu_mai:"0"},
-      {id:"004", cap:"3000", battery:"80", borrow_mai:"1", yu_mai:"1"}
-    ]
-    setPowerbankInfo(testData[id])
+    get_powerbank_status(id).then(data => setPowerbankInfo(data))
+
+
+    return () => {}
   }, [])
 
   return (
