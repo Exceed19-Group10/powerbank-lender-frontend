@@ -4,7 +4,6 @@
     flex-direction: column;
     align-items: center;
     margin: auto;
-    padding-top: 4rem;
     height: 100vh;
   }
 
@@ -35,7 +34,7 @@
   #borrow-button {
     position: absolute;
     bottom: 0%;
-    font-size: 100%;
+    font-size: 150%;
     color: rgb(255, 255, 255);
     background-color: #338069;
     padding-top: 1rem;
@@ -44,3 +43,13 @@
     width: 100%;
     height: 100px;
   }
+
+.warning-text {
+    color: #B81717;
+    font-size: large;
+    
+}
+
+.back-button {
+    align-self:flex-start;
+}

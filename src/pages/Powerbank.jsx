@@ -12,6 +12,11 @@ function Powerbank() {
   const [uid, setUid] = useState("");
   const [upw, setUpw] = useState("");
 
+  ////////////
+  function randomWarning() {
+    return Math.random() < 0.5 ? 'ฮ่า ๆ! ผิด ไอ้โง่ ( INCORRECT USERNAME OR PASSWORD )' : 'ฮั่นแน่ ของเก่ายังไม่ได้จ่ายน้า (THIS USER CAN’T BORROW RIGHT NOW PLEASE CONTACT OUR STAFF)';
+  }
+  /////////
 
   useEffect(() => {
     // getPlace(id).then(place => setCafe(place))
@@ -23,14 +28,14 @@ function Powerbank() {
 
   return (
     <div>
-      <Link to='/'>
-        <h5>Back</h5>
-      </Link>
 
       <div className='powerbank-info-container'>
+        <Link to='/' className='back-button'>
+          <h5>Back</h5>
+        </Link>
         <BatteryItem {...powerbankInfo}/>
         <form className='user-login'>
-            <div className='inputbar'>
+            <div className='inputtext'>
               <label>Username</label>
               <input
                 type="text"
@@ -38,7 +43,7 @@ function Powerbank() {
                 onChange={e => setUid(e.target.value)}
               />
             </div>
-            <div className='inputbar'>
+            <div className='inputtext'>
               <label>Password</label>
               <input
                 type="text"
@@ -46,7 +51,10 @@ function Powerbank() {
                 onChange={e => setUpw(e.target.value)}
               />
             </div>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FORGOT PASSWORD ?</a>
         </form>
+        <p className='warning-text'>{randomWarning()}</p>
+        
         <button id='borrow-button' onClick={() => this.borrow_laew(uid, upw,0 )} >BORROW NOW !</button>
       </div>
     </div>
