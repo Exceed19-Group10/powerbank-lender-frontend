@@ -6,7 +6,11 @@
     margin: auto;
     padding-top: 4rem;
     height: 100vh;
-  }
+}
+
+.back-button {
+  align-self: flex-start;
+}
 
 
 

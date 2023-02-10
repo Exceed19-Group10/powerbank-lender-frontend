@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { get_powerbank_status } from '../services/pw_data'
 import BatteryItem from '../components/BatteryItem'
 import { Link } from 'react-router-dom'
+import '../styles/inuse.css'
 
 function InUse() {
   const [usingInfo, setUsingInfo] = useState({})
@@ -37,7 +38,7 @@ function InUse() {
 
   return (
     <div className="inuse-container">
-      <Link to="/">
+      <Link to="/" className='back-button'>
         <h2>back</h2>
       </Link>
       <BatteryItem {...usingInfo}/>
