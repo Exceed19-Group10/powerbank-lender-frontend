@@ -35,14 +35,14 @@ function Powerbank() {
 
   const borrowHandler = async () => {
     try {
-      console.log()
-      await borrow_laew(uid, upw, powerbankInfo.powerbank_ID).then(data => console.log(data))
-      // return redirect(`inuse/${powerbankInfo.powerbank_ID}`)
-      navigate(`inuse/${powerbankInfo.powerbank_ID}`)
+      if (uid == "" || upw == "") {
+        console.log("ye")
+      }
+      await borrow_laew(uid, upw, powerbankInfo.powerbank_ID)
+      navigate(`../../inuse/${powerbankInfo.powerbank_ID}`)
     } catch(err) {
-      console.log(err)
-      // redirect(`inuse/${powerbankInfo.powerbank_ID}`)
-      navigate('/')
+      console.log(err.message)
+      // if (err instanceof )
     }
   }
 
