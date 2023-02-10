@@ -49,7 +49,7 @@ function BatteryItem( { id, cap, battery, borrow_mai, yu_mai } ) {
   return (
     <div className="card-component">
       <div className="status">
-        <div class={blobSelector(borrow_mai, yu_mai)}></div>
+        <div className={blobSelector(borrow_mai, yu_mai)}></div>
         <p className={batteryStatusSelector(borrow_mai, yu_mai)}>{batteryTextSelector(borrow_mai, yu_mai)}</p>
       </div>
 
