@@ -1,0 +1,94 @@
+{
+  "all_powerbank" :
+  [
+    {
+      "powerbank_ID": 0,
+      "borrow_mai": 0,
+      "yu_mai": 0,
+      "user_ID": 0,
+      "username": "",
+      "user_dept": "",
+      "start_time": 0,
+      "end_time": 0,
+      "late_mai": 0
+    },
+    {
+      "powerbank_ID": 1,
+      "borrow_mai": 0,
+      "yu_mai": 1,
+      "user_ID": 0,
+      "username": "",
+      "user_dept": "",
+      "start_time": 0,
+      "end_time": 0,
+      "late_mai": 0
+    },
+    {
+      "powerbank_ID": 2,
+      "borrow_mai": 1,
+      "yu_mai": 0,
+      "user_ID": 555,
+      "username": "Jeam",
+      "user_dept": "Engineering",
+      "start_time": 123123,
+      "end_time": 200000,
+      "late_mai": 0
+    },
+    {
+      "powerbank_ID": 3,
+      "borrow_mai": 1,
+      "yu_mai": 1,
+      "user_ID": 666,
+      "username": "Test",
+      "user_dept": "Economic",
+      "start_time": 555555,
+      "end_time": 666666,
+      "late_mai": 0
+    },
+    {
+      "powerbank_ID": 4,
+      "borrow_mai": 1,
+      "yu_mai": 1,
+      "user_ID": 666,
+      "username": "Test",
+      "user_dept": "Economic",
+      "start_time": 555555,
+      "end_time": 666666,
+      "late_mai": 0
+    },
+    {
+      "powerbank_ID": 5,
+      "borrow_mai": 1,
+      "yu_mai": 1,
+      "user_ID": 666,
+      "username": "Test",
+      "user_dept": "Economic",
+      "start_time": 555555,
+      "end_time": 666666,
+      "late_mai": 0
+    },
+    {
+      "powerbank_ID": 6,
+      "borrow_mai": 1,
+      "yu_mai": 1,
+      "user_ID": 666,
+      "username": "Test",
+      "user_dept": "Economic",
+      "start_time": 555555,
+      "end_time": 666666,
+      "late_mai": 0
+    }
+  ],
+  "get-powerbank" : 
+  {
+    "powerbank_ID": 2,
+    "borrow_mai": 1,
+    "yu_mai": 0,
+    "user_ID": 555,
+    "username": "Jeam",
+    "user_dept": "Engineering",
+    "start_time": 123123,
+    "end_time": 2000000000000,
+    "late_mai": 0
+  }
+}

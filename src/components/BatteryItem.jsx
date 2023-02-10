@@ -4,12 +4,19 @@ import batteryAvailable from '../assets/battery-available.png'
 import batteryNotAvailable from '../assets/battery-not-available.png'
 
 
-function BatteryItem( { id, cap, battery, borrow_mai, yu_mai } ) {
+function BatteryItem( props ) {
+  const {powerbank_ID, borrow_mai, yu_mai, user_ID, username, user_dept, start_time, end_time, late_mai} = props
+
+  ////////////random cap and batt%/////////////////
+  const cap = Math.floor(Math.random() * 10) * 1000
+  const battery = Math.floor(Math.random() * 100)
+  ///////////////////////////////////////////////
+
 
   const batteryImgSelector = (borrow_mai, yu_mai) => {
-    if (borrow_mai === "1") {
+    if (borrow_mai) {
       return batteryInUse
-    } else if (yu_mai === "1") {
+    } else if (yu_mai) {
       return batteryAvailable
     } else {
       return batteryNotAvailable
@@ -17,9 +24,9 @@ function BatteryItem( { id, cap, battery, borrow_mai, yu_mai } ) {
   }
 
   const batteryTextSelector = (borrow_mai, yu_mai) => {
-    if (borrow_mai === "1") {
+    if (borrow_mai ) {
       return "IN USE"
-    } else if (yu_mai === "1") {
+    } else if (yu_mai ) {
       return "AVAILABLE"
     } else {
       return "NOT AVAILABLE"
@@ -27,9 +34,9 @@ function BatteryItem( { id, cap, battery, borrow_mai, yu_mai } ) {
   }
 
   const batteryStatusSelector = (borrow_mai, yu_mai) => {
-    if (borrow_mai === "1") {
+    if (borrow_mai ) {
       return "status-in-use"
-    } else if (yu_mai === "1") {
+    } else if (yu_mai ) {
       return "status-available"
     } else {
       return "status-not-available"
@@ -37,9 +44,9 @@ function BatteryItem( { id, cap, battery, borrow_mai, yu_mai } ) {
   }
 
   const blobSelector = (borrow_mai, yu_mai) => {
-    if (borrow_mai === "1") {
+    if (borrow_mai ) {
       return "yellow-blob"
-    } else if (yu_mai === "1") {
+    } else if (yu_mai ) {
       return "green-blob"
     } else {
       return "red-blob"
@@ -55,7 +62,7 @@ function BatteryItem( { id, cap, battery, borrow_mai, yu_mai } ) {
 
       <img src={batteryImgSelector(borrow_mai, yu_mai)} alt="battery" className="battery-img"/>
       <div className="battery-info">
-        <p className='info'>ID: {id}</p>
+        <p className='info'>ID: {powerbank_ID}</p>
         <p className='info'>CAP: {cap} mA</p>
         <p className='info'>Battery: {battery}%</p>
       </div>
