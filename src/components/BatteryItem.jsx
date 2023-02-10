@@ -29,7 +29,7 @@ function BatteryItem( props ) {
     } else if (yu_mai ) {
       return "AVAILABLE"
     } else {
-      return "NOT AVAILABLE"
+      return "UNAVAILABLE"
     }
   }
 
