@@ -18,7 +18,7 @@ function InUse() {
       })
     };
 
-    const intervalId = setInterval(fetchData, 400);
+    const intervalId = setInterval(fetchData, 300);
     return () => clearInterval(intervalId);
   }, [])
 
@@ -32,7 +32,8 @@ function InUse() {
   }
 
   const getTimeLeft = (endTime) => {
-    const timeLeft = endTime - Date.now()
+    const timeLeft = endTime*1000 - Date.now()
+    console.log(timeLeft)
     return msToHMS(timeLeft)
   }
 

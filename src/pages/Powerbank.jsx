@@ -35,47 +35,44 @@ function Powerbank() {
 
   const borrowHandler = async () => {
     try {
-      console.log()
-      await borrow_laew(uid, upw, powerbankInfo.powerbank_ID).then(data => console.log(data))
-      // return redirect(`inuse/${powerbankInfo.powerbank_ID}`)
-      navigate(`inuse/${powerbankInfo.powerbank_ID}`)
+      if (uid == "" || upw == "") {
+        console.log("ye")
+      }
+      await borrow_laew(uid, upw, powerbankInfo.powerbank_ID)
+      navigate(`../../inuse/${powerbankInfo.powerbank_ID}`)
     } catch(err) {
-      console.log(err)
-      // redirect(`inuse/${powerbankInfo.powerbank_ID}`)
-      navigate('/')
+      console.log(err.message)
+      // if (err instanceof )
     }
   }
 
   return (
-    <div>
-
-      <div className='powerbank-info-container'>
-        <Link to='/' className='back-button'>
-          <h5>Back</h5>
-        </Link>
-        <BatteryItem {...powerbankInfo}/>
-        <form className='user-login'>
-            <div className='inputtext'>
-              <label>Username</label>
-              <input
-                type="text"
-                value={uid}
-                onChange={e => setUid(e.target.value)}
-              />
-            </div>
-            <div className='inputtext'>
-              <label>Password</label>
-              <input
-                type="password"
-                value={upw}
-                onChange={e => setUpw(e.target.value)}
-              />
-            </div>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FORGOT PASSWORD ?</a>
-        </form>
-        <p className='warning-text'>{randomWarning()}</p>
-        <button id='borrow-button' onClick={borrowHandler} >BORROW NOW !</button>
-      </div>
+    <div className='powerbank-info-container'>
+      <Link to='/' className='back-button'>
+        <h5>Back</h5>
+      </Link>
+      <BatteryItem {...powerbankInfo}/>
+      <form className='user-login'>
+          <div className='inputtext'>
+            <label>Username</label>
+            <input
+              type="text"
+              value={uid}
+              onChange={e => setUid(e.target.value)}
+            />
+          </div>
+          <div className='inputtext'>
+            <label>Password</label>
+            <input
+              type="password"
+              value={upw}
+              onChange={e => setUpw(e.target.value)}
+            />
+          </div>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FORGOT PASSWORD ?</a>
+      </form>
+      <p className='warning-text'>{randomWarning()}</p>
+      <button id='borrow-button' onClick={borrowHandler} >BORROW NOW !</button>
     </div>
   )
 }
