@@ -35,20 +35,22 @@ function InUse() {
     const timeLeft = endTime - Date.now()
     return msToHMS(timeLeft)
   }
-
+  const returnHandler = async () => {
+  }
   return (
     <div className="inuse-container">
       <Link to="/" className='back-button'>
         <h2>back</h2>
       </Link>
       <BatteryItem {...usingInfo}/>
-      <div className="time-container">
-        <h5>Time remaining</h5>
-        <p>{timeLeft}</p>
-      </div>
-      <p className="username">USERNAME: {usingInfo.username}</p>
 
-      <div>return</div>
+      <div className="time-container">
+        <p className="time-text">Time remaining</p>
+        <p className="time">{timeLeft}</p>
+      </div>
+
+      <p className="username">USERNAME: {usingInfo.username}</p>
+      <button className='return-button' onClick={returnHandler} >RETURN</button>
     </div>
   )
 }

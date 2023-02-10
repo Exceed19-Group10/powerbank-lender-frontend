@@ -34,7 +34,15 @@
   align-items: center;
   /* background-color: #E5E5E5; */
   padding: 0.5rem 1rem 0.5rem 1rem;
+  transition: scale 0.3s;
 }
+
+.card-component:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 20px;
+	scale: 1.05;
+}
+
 
 .battery-img {
   width: 60%;
@@ -42,16 +50,20 @@
   margin-top: 0.7rem;
 }
 
+
+
 .battery-info {
   display: flex;
   flex-direction: column;
   margin-top: 0.7rem;
+  color: #3F4651;
 }
 
 .info {
   line-height: 1.5rem;
   font-size: 1.2rem;
 }
+
 
 .green-blob {
 	background: #01724F;
@@ -112,13 +124,13 @@
 }
 
 .yellow-blob {
-  background: rgba(132, 109, 2, 1);
+  background: #ce8a02;
 	border-radius: 50%;
 	margin: 10px;
 	height: 15px;
 	width: 15px;
 
-	box-shadow: 0 0 0 0 rgba(132, 109, 2, 0.7);
+	box-shadow: 0 0 0 0 rgba(177, 121, 0, 0.648);
 	transform: scale(1);
 	animation: pulse 1.5s infinite;
 }

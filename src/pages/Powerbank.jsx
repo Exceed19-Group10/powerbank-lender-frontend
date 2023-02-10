@@ -51,7 +51,7 @@ function Powerbank() {
 
       <div className='powerbank-info-container'>
         <Link to='/' className='back-button'>
-          <h5>Back</h5>
+          <h2>Back</h2>
         </Link>
         <BatteryItem {...powerbankInfo}/>
         <form className='user-login'>
@@ -71,10 +71,10 @@ function Powerbank() {
                 onChange={e => setUpw(e.target.value)}
               />
             </div>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FORGOT PASSWORD ?</a>
+            <a className='forgot' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FORGOT PASSWORD ?</a>
         </form>
         <p className='warning-text'>{randomWarning()}</p>
-        <button id='borrow-button' onClick={borrowHandler} >BORROW NOW !</button>
+        <button className='borrow-button' onClick={borrowHandler} >BORROW NOW !</button>
       </div>
     </div>
   )

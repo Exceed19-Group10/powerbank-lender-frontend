@@ -17,7 +17,8 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      all_powerbank_status().then(data => setPowerbanks(data.all_powerbank))
+      all_powerbank_status().then(data => setPowerbanks(data.all_powerbank)) //for ku server
+      // all_powerbank_status().then(data => setPowerbanks(data)) //for localhost
     };
 
     const intervalId = setInterval(fetchData, 1000);
