@@ -1,6 +1,6 @@
 import  React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { get_powerbank_status } from '../services/pw_data'
+import { useParams, useNavigate } from 'react-router-dom'
+import { get_powerbank_status, force_yu_mai, confirm } from '../services/pw_data'
 import BatteryItem from '../components/BatteryItem'
 import { Link } from 'react-router-dom'
 import '../styles/inuse.css'
@@ -9,11 +9,15 @@ function InUse() {
   const [usingInfo, setUsingInfo] = useState({})
   const [timeLeft, setTimeLeft] = useState(999999999)
   const {id} = useParams()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       get_powerbank_status(id).then(data => {
         setUsingInfo(data)
+        if (data.borrow_mai == 0) {
+          navigate("../../")
+        }
         setTimeLeft(getTimeLeft(data.end_time))
       })
     };
@@ -33,11 +37,17 @@ function InUse() {
 
   const getTimeLeft = (endTime) => {
     const timeLeft = endTime*1000 - Date.now()
-    console.log(timeLeft)
     return msToHMS(timeLeft)
   }
   const returnHandler = async () => {
+    await confirm(usingInfo.powerbank_ID)
+    navigate(`../../`)
   }
+
+  const forceReturnHandler = async () => {
+    force_yu_mai(usingInfo.powerbank_ID).then(console.log("done!"))
+  }
+
   return (
     <div className="inuse-container">
       <Link to="/" className='back-button'>
@@ -51,7 +61,11 @@ function InUse() {
       </div>
 
       <p className="username">USERNAME: {usingInfo.username}</p>
-      <button className='return-button' onClick={returnHandler} >RETURN</button>
+      <button onClick={forceReturnHandler} >FORCE RETURN</button>
+      {usingInfo.yu_mai &&
+        <button className='return-button' onClick={returnHandler} >RETURN</button>
+      }
+
     </div>
   )
 }

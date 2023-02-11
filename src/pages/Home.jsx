@@ -56,7 +56,7 @@ function Home() {
         {powerbanks.map((data) => {
           // console.log(data)
           return (
-            <Link to={linkSelector(data.yu_mai, data.borrow_mai, data.powerbank_ID)}>
+            <Link className='batter-grid' to={linkSelector(data.yu_mai, data.borrow_mai, data.powerbank_ID)}>
               <BatteryItem {...data}/>
             </Link>
           )

@@ -5,11 +5,10 @@ import batteryNotAvailable from '../assets/battery-not-available.png'
 
 
 function BatteryItem( props ) {
-  const {powerbank_ID, borrow_mai, yu_mai, user_ID, username, user_dept, start_time, end_time, late_mai} = props
+  const {powerbank_ID, borrow_mai, yu_mai, user_ID, username, user_dept, start_time, end_time, late_mai, capacity} = props
 
   ////////////random cap and batt%/////////////////
-  const cap = Math.floor(Math.random() * 10) * 1000
-  const battery = Math.floor(Math.random() * 100)
+  const battery = (yu_mai ? 100 : Math.floor(end_time%100))
   ///////////////////////////////////////////////
 
 
@@ -63,7 +62,7 @@ function BatteryItem( props ) {
       <img src={batteryImgSelector(borrow_mai, yu_mai)} alt="battery" className="battery-img"/>
       <div className="battery-info">
         <p className='info'>ID: {powerbank_ID}</p>
-        <p className='info'>CAP: {cap} mA</p>
+        <p className='info'>CAP: {capacity} mA</p>
         <p className='info'>Battery: {battery}%</p>
       </div>
     </div>

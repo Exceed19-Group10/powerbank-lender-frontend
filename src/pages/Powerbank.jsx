@@ -21,7 +21,7 @@ function Powerbank() {
 
   ////////////
   function randomWarning() {
-    return Math.random() < 0.5 ? 'ฮ่า ๆ! ผิด ไอ้โง่ ( INCORRECT USERNAME OR PASSWORD )' : 'ฮั่นแน่ ของเก่ายังไม่ได้จ่ายน้า (THIS USER CAN’T BORROW RIGHT NOW PLEASE CONTACT OUR STAFF)';
+    return Math.random() < 0.5 ? '' : '';
   }
   /////////
 
@@ -36,13 +36,18 @@ function Powerbank() {
   const borrowHandler = async () => {
     try {
       if (uid == "" || upw == "") {
-        console.log("ye")
+        return
       }
       await borrow_laew(uid, upw, powerbankInfo.powerbank_ID)
+      setLoginStatus(1)
       navigate(`../../inuse/${powerbankInfo.powerbank_ID}`)
     } catch(err) {
-      console.log(err.message)
-      // if (err instanceof )
+      if (err.response.status == 401) {
+        setLoginStatus(2)
+      } else if (err.response.status == 406) {
+        setLoginStatus(3)
+      }
+      
     }
   }
 
@@ -58,7 +63,7 @@ function Powerbank() {
             <div className='inputtext'>
               <label>Username</label>
               <input
-                type="text"
+                type="number"
                 value={uid}
                 onChange={e => setUid(e.target.value)}
               />
@@ -73,7 +78,8 @@ function Powerbank() {
             </div>
             <a className='forgot' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FORGOT PASSWORD ?</a>
         </form>
-        <p className='warning-text'>{randomWarning()}</p>
+        { loginStatus == 2 ? <p className='warning-text'>{"ฮ่า ๆ! ผิด ไอ้โง่ ( INCORRECT USERNAME OR PASSWORD )"}</p> : null}
+        { loginStatus == 3 ? <p className='warning-text'>{"ฮั่นแน่ ของเก่ายังไม่ได้จ่ายน้า (THIS USER CAN’T BORROW RIGHT NOW PLEASE CONTACT OUR STAFF)"}</p> : null}
         <button className='borrow-button' onClick={borrowHandler} >BORROW NOW !</button>
       </div>
     </div>

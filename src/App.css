@@ -7,10 +7,11 @@
 
 html {
   background: linear-gradient(11.07deg, #C5C5EC 4.46%, #CFDAF3 31.55%, #D2E1F5 59.54%, #D8F0FA 76.7%, #EAF6FB 91.15%);
-  min-width: 400px;
+  width: 100%;
 }
 
 .App {
+  /* min-width: 300px; */
   max-width: 600px;
   display: flex;
   flex-direction: column;
