@@ -45,13 +45,21 @@
     position: absolute;
     bottom: 0%;
     font-size: 25px;
-    color: rgb(255, 255, 255);
-    background-color: #D18D01;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border: 0px;
     width: 100%;
     height: 80px;
     font-family: Marcellus SC;
+    cursor: pointer;
   }
 
+.grey-button {
+    background-color: #818181;
+    color: rgb(0, 0, 0);
+}
+
+.orange-button {
+    background-color: #C0441B;
+    color: rgb(255, 255, 255);
+}

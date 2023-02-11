@@ -49,7 +49,12 @@ input {
     width: 100%;
     height: 80px;
     font-family: Marcellus SC;
+    cursor: pointer;
   }
+
+.borrow-button:hover {
+  background-color: #447e6d;
+}
 
 .warning-text {
     color: #B81717;

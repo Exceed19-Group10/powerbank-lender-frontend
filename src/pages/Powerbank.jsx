@@ -65,6 +65,10 @@ function Powerbank() {
     }
   }
 
+  const borderStyle = {
+    border: "2px solid red"
+  }
+
   return (
     <div>
 
@@ -75,11 +79,12 @@ function Powerbank() {
         <BatteryItem {...powerbankInfo}/>
         <form className='user-login'>
             <div className='inputtext'>
-              <label>Username</label>
+              <label>User ID</label>
               <input
                 type="number"
                 value={uid}
                 onChange={e => setUid(e.target.value)}
+                style={loginStatus ? {...borderStyle} : {}}
               />
             </div>
             <div className='inputtext'>
@@ -88,6 +93,7 @@ function Powerbank() {
                 type="password"
                 value={upw}
                 onChange={e => setUpw(e.target.value)}
+                style={loginStatus ? {...borderStyle} : {}}
               />
             </div>
             <a className='forgot' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FORGOT PASSWORD ?</a>

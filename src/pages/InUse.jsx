@@ -1,25 +1,29 @@
 import  React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { get_powerbank_status, force_yu_mai, confirm } from '../services/pw_data'
+import { get_powerbank_status, force_yu_mai, confirm, get_fee } from '../services/pw_data'
 import BatteryItem from '../components/BatteryItem'
 import { Link } from 'react-router-dom'
 import '../styles/inuse.css'
 
 function InUse() {
   const [usingInfo, setUsingInfo] = useState({})
-  const [timeLeft, setTimeLeft] = useState(999999999)
+  const [timeLeft, setTimeLeft] = useState(9999999)
+  const [fines, setFines] = useState(0)
   const {id} = useParams()
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
-      get_powerbank_status(id).then(data => {
+      await get_powerbank_status(id).then(data => {
         setUsingInfo(data)
-        if (data.borrow_mai == 0) {
-          navigate("../../")
-        }
         setTimeLeft(getTimeLeft(data.end_time))
+        
+        if (data.borrow_mai == 0) {
+          navigate(`../../powerbank/${data.powerbank_ID}`)
+        }
+        
       })
+      await get_fee(id).then(data => setFines(data.user_fee))
     };
 
     const intervalId = setInterval(fetchData, 300);
@@ -37,7 +41,11 @@ function InUse() {
 
   const getTimeLeft = (endTime) => {
     const timeLeft = endTime*1000 - Date.now()
-    return msToHMS(timeLeft)
+    // const d = new Date()
+    // const s = new Date(endTime)
+    // console.log(d.getHours(), d.getMinutes())
+    // console.log(s.getHours(), s.getMinutes())
+    return timeLeft
   }
   const returnHandler = async () => {
     await confirm(usingInfo.powerbank_ID)
@@ -55,16 +63,26 @@ function InUse() {
       </Link>
       <BatteryItem {...usingInfo}/>
 
-      <div className="time-container">
-        <p className="time-text">Time remaining</p>
-        <p className="time">{timeLeft}</p>
-      </div>
+      { timeLeft > 0 ?
+        <div className="time-container">
+          <p className="time-text">Time remaining</p>
+          <p className="time">{msToHMS(timeLeft)}</p>
+        </div> : 
+
+        <div className='times-up-container'>
+          <h2>TIME'S UP</h2>
+          <p>You have {fines}$ unpaid fines please contact our staff</p>
+        </div>
+      }
 
       <p className="username">USERNAME: {usingInfo.username}</p>
       <button onClick={forceReturnHandler} >FORCE RETURN</button>
-      {usingInfo.yu_mai &&
-        <button className='return-button' onClick={returnHandler} >RETURN</button>
-      }
+      <button 
+        className={usingInfo.yu_mai ? 'return-button orange-button' : 'return-button grey-button'} 
+        onClick={usingInfo.yu_mai ? returnHandler : ()=>{}} 
+      >
+        RETURN
+      </button>
 
     </div>
   )

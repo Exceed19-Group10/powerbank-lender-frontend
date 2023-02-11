@@ -8,7 +8,6 @@ export async function all_powerbank_status() {
 }
 
 export async function borrow_laew(U_ID, U_PW, PB_ID) {
-    console.log(U_ID, U_PW, PB_ID)
     // const res = await axios.put(`http://ecourse.cpe.ku.ac.th/exceed10/powerbank/borrow-laew/${U_ID}/${U_PW}/${PB_ID}`)
     const res = await axios.put(
         `http://group10.exceed19.online/powerbank/borrow-laew/${PB_ID}`,
@@ -35,4 +34,9 @@ export async function confirm(PB_ID) {
 export async function force_yu_mai(PB_ID) {
     const res = await axios.put(`http://group10.exceed19.online/powerbank/return-laew/${PB_ID}`)
     return res
+}
+
+export async function get_fee(PB_ID) {
+    const res = await axios.get(`http://group10.exceed19.online/powerbank/fee/${PB_ID}`)
+    return res.data
 }
