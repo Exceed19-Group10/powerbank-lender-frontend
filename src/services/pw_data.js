@@ -40,3 +40,8 @@ export async function get_fee(PB_ID) {
     const res = await axios.get(default_route + `/fee/${PB_ID}`)
     return res.data
 }
+
+export async function get_history() {
+    const history = await axios.get(default_route + "/get-history")
+    return history.data
+}
