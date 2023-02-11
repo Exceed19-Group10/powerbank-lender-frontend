@@ -4,6 +4,7 @@ import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 import { all_powerbank_status } from '../services/pw_data'
 import { useEffect, useState } from 'react'
+import '../styles/home.css'
 
 function Home() {
 
@@ -57,7 +58,8 @@ function Home() {
           // console.log(data)
           return (
             <Link className='batter-grid' to={linkSelector(data.yu_mai, data.borrow_mai, data.powerbank_ID)}>
-              <BatteryItem {...data}/>
+                <BatteryItem {...data}/>
+              
             </Link>
           )
         })}

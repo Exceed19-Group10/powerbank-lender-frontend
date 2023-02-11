@@ -44,7 +44,7 @@ input {
 .borrow-button {
     position: absolute;
     bottom: 0px;
-    font-size: 25px;
+    font-size: 24px;
     color: rgb(255, 255, 255);
     background-color: #338069;
     padding-top: 1rem;
@@ -54,10 +54,12 @@ input {
     height: 80px;
     font-family: Marcellus SC;
     cursor: pointer;
+    transition: all 0.2s;
   }
 
 .borrow-button:hover {
-  background-color: #447e6d;
+  background-color: #38a987;
+  font-size: 26px;
 }
 
 .warning-text {

@@ -25,6 +25,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 15px;
 }
 
 .banner-container img {
@@ -36,6 +37,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
+
 }
 
 .logo-text h2{

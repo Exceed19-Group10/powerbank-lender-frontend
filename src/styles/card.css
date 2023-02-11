@@ -30,26 +30,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  transition: scale 0.3s;
+  /* padding: 0.5rem 1rem 0.5rem 1rem; */
 }
 
-.card-component:hover {
-	background-color: rgba(255, 255, 255,0.3);
-	border-radius: 20px;
-	scale: 1.05;
-}
 
 .battery-grid {
 	grid-auto-rows: 1fr
 }
 
 .battery-img {
-  width: 60%;
+  width: 55%;
   max-width: 11rem;
   margin-top: 0.7rem;
 }
-
 
 
 .battery-info {
