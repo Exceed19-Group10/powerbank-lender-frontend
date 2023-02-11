@@ -27,6 +27,8 @@ function Powerbank() {
         setPowerbankInfo(data)
         if (data.borrow_mai == 1) {
           navigate(`../../inuse/${data.powerbank_ID}`)
+        } else if (data.yu_mai == 0) {
+          navigate("../../")
         }
       })
     };
@@ -38,6 +40,7 @@ function Powerbank() {
   const borrowHandler = async () => {
     try {
       if (uid == "" || upw == "") {
+        setLoginStatus(2)
         return
       }
       await borrow_laew(uid, upw, powerbankInfo.powerbank_ID)
