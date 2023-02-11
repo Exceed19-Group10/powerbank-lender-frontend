@@ -25,12 +25,26 @@ function Powerbank() {
   }
   /////////
 
+  // useEffect(() => {
+  //   // getPlace(id).then(place => setCafe(place))
+  //   get_powerbank_status(id).then(data => setPowerbankInfo(data))
+
+
+  //   return () => {}
+  // }, [])
+
   useEffect(() => {
-    // getPlace(id).then(place => setCafe(place))
-    get_powerbank_status(id).then(data => setPowerbankInfo(data))
+    const fetchData = async () => {
+      get_powerbank_status(id).then(data => {
+        setPowerbankInfo(data)
+        if (data.borrow_mai == 1) {
+          navigate(`../../inuse/${data.powertbank_ID}`)
+        }
+      })
+    };
 
-
-    return () => {}
+    const intervalId = setInterval(fetchData, 300);
+    return () => clearInterval(intervalId);
   }, [])
 
   const borrowHandler = async () => {
