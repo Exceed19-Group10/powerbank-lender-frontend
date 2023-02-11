@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const default_route = "https://ecourse.cpe.ku.ac.th/exceed10/powerbank"
-const default_route = "http://group10.exceed19.online/powerbank"
+const default_route = "https://ecourse.cpe.ku.ac.th/exceed10/powerbank"
+// const default_route = "http://group10.exceed19.online/powerbank"
 // const default_route = ""http://localhost:3000"
 
 
