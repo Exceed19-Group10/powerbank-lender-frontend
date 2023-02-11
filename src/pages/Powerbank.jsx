@@ -38,7 +38,7 @@ function Powerbank() {
       get_powerbank_status(id).then(data => {
         setPowerbankInfo(data)
         if (data.borrow_mai == 1) {
-          navigate(`../../inuse/${data.powertbank_ID}`)
+          navigate(`../../inuse/${data.powerbank_ID}`)
         }
       })
     };
