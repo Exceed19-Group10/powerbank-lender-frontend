@@ -1,3 +1,7 @@
+.back-arrow {
+    width: 1.5rem;
+}
+
 .inuse-container {
     max-width: 500px;
     display: flex;
@@ -8,7 +12,7 @@
 }
 
 .back-button{
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-left: 1rem;
 }
 
@@ -45,13 +49,44 @@
     position: absolute;
     bottom: 0%;
     font-size: 25px;
-    color: rgb(255, 255, 255);
-    background-color: #D18D01;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border: 0px;
     width: 100%;
     height: 80px;
     font-family: Marcellus SC;
+    cursor: pointer;
   }
 
+.grey-button {
+    background-color: #818181;
+    color: rgb(0, 0, 0);
+}
+
+.orange-button {
+    background-color: #C0441B;
+    color: rgb(255, 255, 255);
+}
+
+.times-up-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.7rem;
+    color: #861C1C;
+    text-align: center;
+}
+
+.times-up-container > * {
+    margin-top: 0.7rem;
+}
+
+.times-up-container h2 {
+    font-family: "Marcellus SC";
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.times-up-container p {
+    padding: 1rem;
+}
