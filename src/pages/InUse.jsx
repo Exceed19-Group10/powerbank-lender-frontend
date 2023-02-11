@@ -4,6 +4,7 @@ import { get_powerbank_status, force_yu_mai, confirm, get_fee } from '../service
 import BatteryItem from '../components/BatteryItem'
 import { Link } from 'react-router-dom'
 import '../styles/inuse.css'
+import back from "../assets/back.png"
 
 function InUse() {
   const [usingInfo, setUsingInfo] = useState({})
@@ -59,7 +60,8 @@ function InUse() {
   return (
     <div className="inuse-container">
       <Link to="/" className='back-button'>
-        <h2>back</h2>
+        {/* <h2>back</h2> */}
+        <img src={back} alt="back-button" className='back-arrow'/>
       </Link>
       <BatteryItem {...usingInfo}/>
 

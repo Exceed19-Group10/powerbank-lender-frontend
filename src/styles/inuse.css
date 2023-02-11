@@ -1,3 +1,7 @@
+.back-arrow {
+    width: 1.5rem;
+}
+
 .inuse-container {
     max-width: 500px;
     display: flex;
@@ -8,7 +12,7 @@
 }
 
 .back-button{
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-left: 1rem;
 }
 
@@ -62,4 +66,27 @@
 .orange-button {
     background-color: #C0441B;
     color: rgb(255, 255, 255);
+}
+
+.times-up-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.7rem;
+    color: #861C1C;
+    text-align: center;
+}
+
+.times-up-container > * {
+    margin-top: 0.7rem;
+}
+
+.times-up-container h2 {
+    font-family: "Marcellus SC";
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.times-up-container p {
+    padding: 1rem;
 }
