@@ -49,7 +49,7 @@ function Powerbank() {
     } catch(err) {
       if (err.response.status == 401) {
         setLoginStatus(2)
-      } else if (err.response.status == 406) {
+      } else if (err.response.status == 402) {
         setLoginStatus(3)
       }
       
