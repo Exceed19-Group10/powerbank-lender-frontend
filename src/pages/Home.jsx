@@ -4,6 +4,7 @@ import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 import { all_powerbank_status } from '../services/pw_data'
 import { useEffect, useState } from 'react'
+import '../styles/home.css'
 
 function Home() {
 
@@ -44,20 +45,21 @@ function Home() {
 
   return (
     <div className="App">
-      <div className="banner-container">
+      <Link to="/history" className="banner-container">
         <img src={logo} alt="banner-logo" />
         <div className="logo-text">
           <h2 className='first-line-banner-text'>Power Bank</h2>
           <h2 className='second-line-banner-text'>Lender</h2>
         </div>
-      </div>
+      </Link>
 
       <div className="card-container">
         {powerbanks.map((data) => {
           // console.log(data)
           return (
             <Link className='batter-grid' to={linkSelector(data.yu_mai, data.borrow_mai, data.powerbank_ID)}>
-              <BatteryItem {...data}/>
+                <BatteryItem {...data}/>
+              
             </Link>
           )
         })}

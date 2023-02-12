@@ -1,0 +1,50 @@
+.back-arrow {
+  width: 1.5rem;
+}
+
+.back-button{
+  margin-left: 1rem;
+}
+
+.topic {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.history-container {
+  max-width: 600px;
+  margin: auto;
+  padding-top: 1rem;
+  min-height: 100vh;
+}
+
+.history-components-container {
+  margin-top: 1rem;
+}
+
+.history-item-container {
+  /* border: 1px solid black; */
+  display: flex;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  
+}
+
+.img-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.battery-img {
+  width: 60%
+}
+
+.history-info {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}

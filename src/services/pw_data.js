@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const default_route = "https://ecourse.cpe.ku.ac.th/exceed10/powerbank"
-const default_route = "http://group10.exceed19.online/powerbank"
+const default_route = "https://ecourse.cpe.ku.ac.th/exceed10/powerbank"
+// const default_route = "http://group10.exceed19.online/powerbank"
 // const default_route = ""http://localhost:3000"
 
 
@@ -39,4 +39,9 @@ export async function force_yu_mai(PB_ID) {
 export async function get_fee(PB_ID) {
     const res = await axios.get(default_route + `/fee/${PB_ID}`)
     return res.data
+}
+
+export async function get_history() {
+    const history = await axios.get(default_route + "/get-history")
+    return history.data
 }

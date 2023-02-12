@@ -27,6 +27,8 @@ function Powerbank() {
         setPowerbankInfo(data)
         if (data.borrow_mai == 1) {
           navigate(`../../inuse/${data.powerbank_ID}`)
+        } else if (data.yu_mai == 0) {
+          navigate("../../")
         }
       })
     };
@@ -38,6 +40,7 @@ function Powerbank() {
   const borrowHandler = async () => {
     try {
       if (uid == "" || upw == "") {
+        setLoginStatus(2)
         return
       }
       await borrow_laew(uid, upw, powerbankInfo.powerbank_ID)
@@ -88,8 +91,8 @@ function Powerbank() {
             </div>
             <a className='forgot' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FORGOT PASSWORD ?</a>
         </form>
-        { loginStatus == 2 ? <p className='warning-text'>{"ฮ่า ๆ! ผิด ไอ้โง่( INCORRECT USERNAME OR PASSWORD )"}</p> : null}
-        { loginStatus == 3 ? <p className='warning-text'>{"ฮั่นแน่ ของเก่ายังไม่ได้จ่ายน้า (THIS USER CAN’T BORROW RIGHT NOW PLEASE CONTACT OUR STAFF)"}</p> : null}
+        { loginStatus == 2 ? <p className='warning-text'>{"INCORRECT USERNAME OR PASSWORD"}</p> : null}
+        { loginStatus == 3 ? <p className='warning-text'>{"THIS USER CAN’T BORROW RIGHT NOW PLEASE CONTACT OUR STAFF"}</p> : null}
         <button className='borrow-button' onClick={borrowHandler} >BORROW NOW !</button>
       </div>
     </div>
