@@ -1,5 +1,6 @@
 .powerbank-container {
   max-width: 100vh
+  mmargin:auto;
 }
 
 .powerbank-info-container {
