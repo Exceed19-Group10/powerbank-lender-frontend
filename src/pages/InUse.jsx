@@ -77,7 +77,7 @@ function InUse() {
       }
 
       <p className="username">USERNAME: {usingInfo.username}</p>
-      <button onClick={forceReturnHandler} >FORCE RETURN</button>
+      {/* <button onClick={forceReturnHandler} >FORCE RETURN</button> */}
       <button 
         className={usingInfo.yu_mai ? 'return-button orange-button' : 'return-button grey-button'} 
         onClick={usingInfo.yu_mai ? returnHandler : ()=>{}} 
